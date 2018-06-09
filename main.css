@@ -1,4 +1,18 @@
 body {
     padding-top: 5rem;
-    background-color: burlywood;
 }
+
+#statsTable {
+    height: 375px;
+    width: 225px;
+    margin-top: 20px;
+}
+
+.statsRow td{
+    width: 43px;
+    height: 47px;
+}
+
+/* .statsItem img {
+    width:
+} */
