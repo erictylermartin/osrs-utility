@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-    crossorigin="anonymous">
+
+<head>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="main.css" />
 <link rel="icon" href="assets/favicon.ico" />
 <title>OSRS Utility</title>
 
-<body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Old School Utility</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home
@@ -25,208 +30,198 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Skill Calculators</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Herblore</a>
+                        <a class="dropdown-item" href="#">Construction</a>
+                        <a class="dropdown-item" href="#">Fletching</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Woodcutting</a>
+                    </div>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search for player" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input id="searchPlayer" class="form-control mr-sm-2" type="search" placeholder="Enter Player Name" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" onclick="searchPlayer()">Search</button>
             </form>
         </div>
     </nav>
 
+
     <main role="main" class="container">
-
-        <div id="content" class="col-md-10">
-            <h3>Stats for Erimar</h3>
-            <table id="statsTable">
-                <tbody class="statsTable">
-                    <tr class="statsRow">
-                        <td>
-                            <img src="assets/skills/attack.png">
-                        </td>
-                        <td id="attackStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/hitpoints.png">
-                        </td>
-                        <td id="hitpointsStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/mining.png">
-                        </td>
-                        <td id="miningStat">
-                            99
-                        </td>
-                    </tr>
-                    <tr class="statsRow">
-                        <td>
-                            <img src="assets/skills/strength.png">
-                        </td>
-                        <td id="strengthStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/agility.png">
-                        </td>
-                        <td id="agilityStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/smithing.png">
-                        </td>
-                        <td id="smithingStat">
-                            99
-                        </td>
-                    </tr>
-                    <tr class="statsRow">
-                        <td>
-                            <img src="assets/skills/defence.png">
-                        </td>
-                        <td id="defenceStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/herblore.png">
-                        </td>
-                        <td id="herbloreStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/fishing.png">
-                        </td>
-                        <td id="fishingStat">
-                            99
-                        </td>
-                    </tr>
-                    <tr class="statsRow">
-                        <td>
-                            <img src="assets/skills/ranged.png">
-                        </td>
-                        <td id="rangedStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/thieving.png">
-                        </td>
-                        <td id="thievingStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/cooking.png">
-                        </td>
-                        <td id="cookingStat">
-                            99
-                        </td>
-                    </tr>
-                    <tr class="statsRow">
-                        <td>
-                            <img src="assets/skills/prayer.png">
-                        </td>
-                        <td id="prayerStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/crafting.png">
-                        </td>
-                        <td id="craftingStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/firemaking.png">
-                        </td>
-                        <td id="firemakingStat">
-                            99
-                        </td>
-                    </tr>
-                    <tr class="statsRow">
-                        <td>
-                            <img src="assets/skills/magic.png">
-                        </td>
-                        <td id="magicStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/fletching.png">
-                        </td>
-                        <td id="fletchingStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/woodcutting.png">
-                        </td>
-                        <td id="woodcuttingStat">
-                            99
-                        </td>
-                    </tr>
-                    <tr class="statsRow">
-                        <td>
-                            <img src="assets/skills/runecrafting.png">
-                        </td>
-                        <td id="runecraftingStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/slayer.png">
-                        </td>
-                        <td id="slayerStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/farming.png">
-                        </td>
-                        <td id="farmingStat">
-                            99
-                        </td>
-                    </tr>
-                    <tr class="statsRow">
-                        <td>
-                            <img src="assets/skills/construction.png">
-                        </td>
-                        <td id="constructionStat">
-                            99
-                        </td>
-                        <td>
-                            <img src="assets/skills/hunter.png">
-                        </td>
-                        <td id="hunterStat">
-                            99
-                        </td>
-                        <td>
-                            Total:
-                        </td>
-                        <td id="totalStat">
-                            2277
-                        </td>
-                    </tr>
-                </tbody>
-
-            </table>
-        </div>
-
     </main>
-    <!-- /.container -->
 
-    <!-- Bootstrap core JavaScript
-        ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <div id="stats" style="display:none">
+        <h3>Stats for Erimar</h3>
+        <table id="statsTable">
+            <tbody class="statsTable">
+                <tr class="statsRow">
+                    <td>
+                        <img src="assets/skills/attack.png">
+                    </td>
+                    <td id="attackStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/hitpoints.png">
+                    </td>
+                    <td id="hitpointsStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/mining.png">
+                    </td>
+                    <td id="miningStat">
+                        99
+                    </td>
+                </tr>
+                <tr class="statsRow">
+                    <td>
+                        <img src="assets/skills/strength.png">
+                    </td>
+                    <td id="strengthStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/agility.png">
+                    </td>
+                    <td id="agilityStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/smithing.png">
+                    </td>
+                    <td id="smithingStat">
+                        99
+                    </td>
+                </tr>
+                <tr class="statsRow">
+                    <td>
+                        <img src="assets/skills/defence.png">
+                    </td>
+                    <td id="defenceStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/herblore.png">
+                    </td>
+                    <td id="herbloreStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/fishing.png">
+                    </td>
+                    <td id="fishingStat">
+                        99
+                    </td>
+                </tr>
+                <tr class="statsRow">
+                    <td>
+                        <img src="assets/skills/ranged.png">
+                    </td>
+                    <td id="rangedStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/thieving.png">
+                    </td>
+                    <td id="thievingStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/cooking.png">
+                    </td>
+                    <td id="cookingStat">
+                        99
+                    </td>
+                </tr>
+                <tr class="statsRow">
+                    <td>
+                        <img src="assets/skills/prayer.png">
+                    </td>
+                    <td id="prayerStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/crafting.png">
+                    </td>
+                    <td id="craftingStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/firemaking.png">
+                    </td>
+                    <td id="firemakingStat">
+                        99
+                    </td>
+                </tr>
+                <tr class="statsRow">
+                    <td>
+                        <img src="assets/skills/magic.png">
+                    </td>
+                    <td id="magicStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/fletching.png">
+                    </td>
+                    <td id="fletchingStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/woodcutting.png">
+                    </td>
+                    <td id="woodcuttingStat">
+                        99
+                    </td>
+                </tr>
+                <tr class="statsRow">
+                    <td>
+                        <img src="assets/skills/runecrafting.png">
+                    </td>
+                    <td id="runecraftingStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/slayer.png">
+                    </td>
+                    <td id="slayerStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/farming.png">
+                    </td>
+                    <td id="farmingStat">
+                        99
+                    </td>
+                </tr>
+                <tr class="statsRow">
+                    <td>
+                        <img src="assets/skills/construction.png">
+                    </td>
+                    <td id="constructionStat">
+                        99
+                    </td>
+                    <td>
+                        <img src="assets/skills/hunter.png">
+                    </td>
+                    <td id="hunterStat">
+                        99
+                    </td>
+                    <td>
+                        Total:
+                    </td>
+                    <td id="totalStat">
+                        2277
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 
