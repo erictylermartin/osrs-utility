@@ -23,13 +23,13 @@ import strength from './skills/strength.png';
 import thieving from './skills/thieving.png';
 import woodcutting from './skills/woodcutting.png';
 
-class StatsImage extends React.Component {
-    render() {
-        return (
-            <img src={mining} />
-        )
-    }
-}
+// class Skill extends React.Component {
+//     render() {
+//         return (
+//             <img src={this.props.sid} /><p>
+//         )
+//     }
+// }
 
 class StatsTable extends React.Component {
     render() {
