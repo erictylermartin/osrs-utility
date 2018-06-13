@@ -1,10 +1,7 @@
-import attack from './attack.png';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
 
-
-class StatsImage extends React.Component {
-    render() {
-        return (
-            <img src={attack} alt="Attack" />
-        )
-    }
-}
+// ReactDOM.render(
+//     <h1>Hello, World </h1>,
+//     document.getElementById('root2')
+// );
