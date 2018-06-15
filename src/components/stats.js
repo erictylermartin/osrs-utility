@@ -29,7 +29,7 @@ function importAll(r) {
     return images;
 }
 
-const images = importAll(require.context('./skills', false, /\.(png|jpe?g|svg)$/));
+const images = importAll(require.context('../skills', false, /\.(png|jpe?g|svg)$/));
 
 let SkillsEnum = Object.freeze({
     properties: {
