@@ -1,33 +1,13 @@
-import React from 'react'
-// import agility from './skills/agility.png';
-// import attack from './skills/attack.png';
-// import construction from './skills/construction.png';
-// import cooking from './skills/cooking.png';
-// import crafting from './skills/crafting.png';
-// import defence from './skills/defence.png';
-// import farming from './skills/farming.png';
-// import firemaking from './skills/firemaking.png';
-// import fishing from './skills/fishing.png';
-// import fletching from './skills/fletching.png';
-// import herblore from './skills/herblore.png';
-// import hitpoints from './skills/hitpoints.png';
-// import hunter from './skills/hunter.png';
-// import magic from './skills/magic.png';
-// import mining from './skills/mining.png';
-// import prayer from './skills/prayer.png';
-// import ranged from './skills/ranged.png';
-// import runecrafting from './skills/runecrafting.png';
-// import slayer from './skills/slayer.png';
-// import smithing from './skills/smithing.png';
-// import strength from './skills/strength.png';
-// import thieving from './skills/thieving.png';
-// import woodcutting from './skills/woodcutting.png';
+import React from 'react';
+
 
 function importAll(r) {
     let images = {};
     r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
     return images;
 }
+
+
 
 const images = importAll(require.context('../skills', false, /\.(png|jpe?g|svg)$/));
 
@@ -41,7 +21,6 @@ let SkillsEnum = Object.freeze({
 });
 
 let playerSkills = [2277, 1, 2, 4, 2, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 3, 16, 17, 18, 19, 20, 21, 22, 23]
-
 class Skill extends React.Component {
 
     render() {
