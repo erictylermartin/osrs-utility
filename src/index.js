@@ -10,7 +10,7 @@ import Construction from './components/construction';
 import Fletching from './components/fletching';
 import General_Graardor from './components/general_graardor';
 
-const BASE_HISCORE_URL = "http://localhost:8080/hiscore"
+const BASE_HISCORE_URL = "http://localhost:8080/mockHiscore"
 
 const BASE_HISCORE_URL2 = "http://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player="
 
@@ -49,7 +49,10 @@ class App extends React.Component {
             playerStats: {skills : [
                 {rank: 1, exp: 1, level: 1},{rank: 2, exp: 2, level: 2}
             ]},
+            currentPlayer: '',
         }
+
+        this.searchPlayer = this.searchPlayer.bind(this);
     }
 
 
@@ -61,7 +64,8 @@ class App extends React.Component {
     // }
 
     getPlayerStats = () => {
-        axios.get(BASE_HISCORE_URL + "?username=erimar")
+        let currentPlayer = this.state.currentPlayer;
+        axios.get(BASE_HISCORE_URL + "?username="+{currentPlayer})
             .then(response => {
                 console.log(response.data);
                 this.setState(
@@ -72,17 +76,16 @@ class App extends React.Component {
 
     }
 
-    searchPlayer() {
-        return (
-            <div></div>
-        )
+    searchPlayer(value) {
+        console.log("Searching player: "+value);
+        this.setState( {currentPlayer: {value}})
     }
 
     render() {
         return (
             <HashRouter>
                 <div>
-                    <Navigation />
+                    <Navigation searchPlayer={this.searchPlayer}/>
                     <button onClick={this.getPlayerStats}>Click Me For Stats</button>
                     <main role="main" className="container">
                         <Route exact path="/" render={() => (
