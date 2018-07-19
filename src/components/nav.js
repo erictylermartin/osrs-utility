@@ -1,7 +1,6 @@
 import React from 'react';
-import { Route, NavLink, HashRouter } from 'react-router-dom'
-import NameForm from './name_form'
-
+import { Route, NavLink, HashRouter } from 'react-router-dom';
+import NameForm from './name_form';
 
 class Navigation extends React.Component {
     render() {
@@ -68,10 +67,9 @@ class Navigation extends React.Component {
                             </ul>
                             {/* <form className="form-inline my-2 my-lg-0">
                                 <input id="searchPlayer" className="form-control mr-sm-2" type="search" placeholder="Enter Player Name" aria-label="Search" />
-                                <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.searchPlayer}>Search</button>
+                                <button className="btn btn-outline-success my-2 my-sm-0" onClick={() => this.props.getPlayerStats("erimar")}>Search</button>
                             </form> */}
-                            <NameForm searchPlayer={this.props.searchPlayer}/>
-                            
+                            <NameForm searchPlayer={this.props.searchPlayer} />
                         </div>
                     </nav>
         )

@@ -2,7 +2,7 @@
   "name": "osrs-utility",
   "version": "1.0.0",
   "description": "osrs utility site",
-  "main": "main.js",
+  "main": "App.js",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
