@@ -5,10 +5,10 @@ import axios from 'axios';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import StatsTable from './components/stats';
-import Navigation from './components/nav'
-import Construction from './components/construction';
-import Fletching from './components/fletching';
-import General_Graardor from './components/general_graardor';
+import Navigation from './components/navigation/nav'
+import Construction from './components/skills/construction';
+import Fletching from './components/skills/fletching';
+import General_Graardor from './components/boss/general_graardor';
 
 const BASE_HISCORE_URL = "http://localhost:8080/hiscore"
 
@@ -49,6 +49,7 @@ class App extends React.Component {
                         <Route exact path="/" render={() => (
                             <StatsTable playerStats={this.state.playerStats} />
                         )} />
+                        {/* TODO: move the / route to <Home> and have it conditionally render a name form or stats table */}
                         <Route path="/construction" component={Construction} />
                         <Route path="/fletching" component={Fletching} />
                         <Route path="/general_graardor" component={General_Graardor} />
